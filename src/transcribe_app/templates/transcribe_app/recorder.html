@@ -1,0 +1,66 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>VoiceAssist</title>
+
+    <link rel="stylesheet" href="{% static 'css/voiceassist.css' %}">
+</head>
+
+<body>
+<main class="container" aria-labelledby="appTitle">
+
+    <header>
+        <div>
+            <h1 id="appTitle">VoiceAssist — Speech to Text</h1>
+            <p class="meta">A real-time transcription tool designed to support easier communication.</p>
+        </div>
+        <div class="small">Allow mic access for recording.</div>
+    </header>
+
+    <!-- MAIN SECTION -->
+    <section id="main" class="card">
+        <div class="flex-between">
+            <div>
+                <label for="lang">Select Language</label>
+                <select id="lang">
+                    <option value="auto">Auto Detect</option>
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="ta">Tamil</option>
+                    <option value="te">Telugu</option>
+                </select>
+            </div>
+<br>
+            <div class="controls" role="group">
+                <button id="recBtn">Start Recording</button>
+                <button id="stopBtn" disabled>Stop</button>
+                <button id="downloadBtn" class="secondary" disabled>Download</button>
+                <span id="status" class="status"></span>
+            </div>
+        </div>
+
+        <h2 class="subhead">Transcript</h2>
+        <div id="transcript">[No transcript yet]</div>
+    </section>
+
+    <!-- HISTORY SECTION -->
+    <aside id="history" class="card">
+        <h2>History</h2>
+        <p class="small">Click an entry to load its transcript.</p>
+        <div id="historyList" class="history-list">Loading...</div>
+    </aside>
+
+<footer>
+    <p class="small">Made with care to make conversations easier. © 2025 VoiceAssist</p>
+</footer>
+
+</main>
+
+<script src="{% static 'js/voiceassist.js' %}"></script>
+</body>
+</html>
