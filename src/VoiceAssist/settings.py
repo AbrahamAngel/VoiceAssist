@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'transcribe_app.apps.TranscribeAppConfig'
+    'transcribe_app.apps.TranscribeAppConfig',
+    'authentication.apps.AuthenticationConfig'
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,10 @@ TEMPLATES = [
         },
     },
 ]
+
+LOGIN_URL = '/auth/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/auth/login/'
 
 WSGI_APPLICATION = 'VoiceAssist.wsgi.application'
 
