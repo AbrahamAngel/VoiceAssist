@@ -1,0 +1,143 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<title>VoiceAssist | AI Medical Communication Assistant</title>
+
+<link rel="stylesheet" href="{% static 'css/voiceassist.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+<div class="logo">VoiceAssist</div>
+
+<ul class="nav-links">
+<li><a href="/">Home</a></li>
+<li><a href="/#services">Services</a></li>
+<li><a href="/#about">About</a></li>
+<li><a class="demo-btn" href="/recorder/">Live Demo</a></li>
+</ul>
+
+</nav>
+
+
+<main class="container">
+
+<header class="hero-header">
+
+<h1>Medical Communication Assistant</h1>
+
+<p class="meta">
+AI-powered speech-to-text system with medical intelligence
+to assist hearing-impaired patients.
+</p>
+
+</header>
+
+
+<!-- MAIN CARD -->
+
+<section class="card">
+
+<div class="top-controls">
+
+<div>
+<label for="lang"><strong>Select Language</strong></label><br>
+<br>
+<select id="lang">
+<option value="auto">Auto Detect</option>
+<option value="en">English</option>
+<option value="hi">Hindi</option>
+<option value="ml">Malayalam</option>
+<option value="ta">Tamil</option>
+<option value="te">Telugu</option>
+</select>
+</div>
+
+<div class="controls">
+
+<button id="recBtn">🎙 Start Recording</button>
+<button id="stopBtn" disabled>⏹ Stop</button>
+<button id="downloadBtn" class="secondary" disabled>⬇ Download</button>
+
+<span id="status"></span>
+
+</div>
+
+</div>
+
+
+<hr>
+
+<h2>Medical Transcript</h2>
+
+
+<div id="riskAlert" class="risk-alert" style="display:none;">
+⚠ Emergency / Critical Condition Detected
+</div>
+
+
+<div id="transcript" class="transcript-box">
+[ No transcript yet ]
+</div>
+
+
+<div id="instructionBox" class="instruction-box" style="display:none;">
+
+<h3>Extracted Medical Instructions</h3>
+
+<p><strong>Dosages:</strong> <span id="dosages">None</span></p>
+
+<p><strong>Durations:</strong> <span id="durations">None</span></p>
+
+</div>
+
+</section>
+
+
+<!-- HISTORY -->
+
+<aside class="card">
+
+<h2>History</h2>
+
+<p class="small">
+Click an entry to load, download or delete transcript.
+</p>
+
+<div id="historyList" class="history-list">
+Loading...
+</div>
+
+</aside>
+
+</main>
+
+
+<footer class="footer">
+
+<p>VoiceAssist — AI Medical Communication Assistant</p>
+
+<p>
+Developed as a Socially Relevant Project  
+TKM College of Engineering, Kollam
+</p>
+
+<p>© 2026 VoiceAssist</p>
+
+</footer>
+
+
+<script src="{% static 'js/voiceassist.js' %}"></script>
+
+</body>
+</html>
